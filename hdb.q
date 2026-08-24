@@ -2,4 +2,4 @@
 \p 5012
 
 / Load the historical database
-\l hdb
+\l data/hdb

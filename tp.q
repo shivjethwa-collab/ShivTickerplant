@@ -2,7 +2,7 @@
 \p 5010
 
 / Create a daily tickerplant log file
-.u.L:`$":tplog_",string .z.D;
+.u.L:hsym `$"data/tplogs/tplog_",string .z.D;
 
 / Initialise the tickerplant log
 .u.L set ();
@@ -30,4 +30,3 @@ The client handle is added to the subscriber list.
 
 / Remove a disconnected client from the subscriber list
 .z.pc:{.u.w:.u.w except\: neg x;} 
-
