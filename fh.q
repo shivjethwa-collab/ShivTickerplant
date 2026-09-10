@@ -7,7 +7,16 @@ The data contains timestamps, symbols, prices, sizes and trade sides.
 \
 
 .z.ts:{
+  / Send the generated trade batch to the tickerplant
+  neg[h](`.u.upd;`trades;.fh.createTrades[]);
+  neg[h](`.u.upd;`quotes;.fh.createQuotes[]);
+  }
+  
 
+/ Set the timer to trigger .z.ts every 5000 milliseconds
+system "t 5000";
+
+.fh.createTrades:{
   / Generate three timestamps using the current time
   times: 3#.z.n;
   
@@ -23,8 +32,6 @@ The data contains timestamps, symbols, prices, sizes and trade sides.
   / Randomly select buy or sell trade sides
   sides: 3?`B`S;
 
-  / Send the generated trade batch to the tickerplant
-  neg[h](`.u.upd;`trades; (times; syms; prices; sizes; sides));}
+  (times; syms; prices; sizes; sides)
 
-/ Set the timer to trigger .z.ts every 5000 milliseconds
-system "t 5000";
+ };

@@ -1,5 +1,8 @@
 / Tickerplant listens for IPC connections on port 5010
-\p 5010
+system"p 5010"
+
+/ Load table definitions
+system"l schema.q";
 
 / Create a daily tickerplant log file
 .u.L:hsym `$"data/tplogs/tplog_",string .z.d;
@@ -11,7 +14,7 @@
 .u.l:hopen .u.L;
 
 / Store the list of subscribers for each table
-.u.w:enlist[`trades]!()
+.u.w:()!();
 
 
 / Track current day

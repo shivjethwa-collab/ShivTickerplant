@@ -1,0 +1,20 @@
+[] - 1) keyed tabkes 
+   - 2) pass parameters
+
+
+
+{} - create a function
+
+function - is a lambda with a defined name 
+
+/ function
+multiply:{x*y}
+
+/lmabda
+{x*y}
+
+
+
+
+() - Used to create a list
+(`a;344;"ljcnle";2026.09.10)

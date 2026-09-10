@@ -3,3 +3,10 @@
 
 / Load the historical database
 \l data/hdb
+
+
+.hdb.reload:{
+    system"l data/hdb";
+
+    
+ };
