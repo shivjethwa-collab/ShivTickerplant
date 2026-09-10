@@ -24,22 +24,3 @@ clear the RDB table and signal the HDB process to reload.
   .Q.dpft[`:data/hdb;d;`sym;`trades];
   delete from `trades;
   hdbH "\\l ." }
-
-/ Set the last date for which EOD has been completed
-lastEOD:.z.D-1
-
-/ Run the EOD process
-.u.eod:{[]
-  .u.end .z.D;
-  lastEOD::.z.D;
- }
-
-/ Check for end of day every second
-.z.ts:{[]
-  if[.z.T>16:00:00.000;
-    if[lastEOD<.z.D;
-      .u.eod[]]]
- }
-
-/ Run the timer every second
-system "t 1000"
